@@ -8,5 +8,7 @@ python-jose[cryptography]
 fastapi
 uvicorn
 sqlalchemy
-pydantic
+pydantic 
 python-dotenv
+pydantic-settings
+
