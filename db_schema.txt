@@ -1,0 +1,12 @@
+=== Database Schema ===
+
+Table: users
+  - id (INTEGER)
+  - name (VARCHAR)
+  - email (VARCHAR)
+
+Table: blogs
+  - id (INTEGER)
+  - title (VARCHAR)
+  - content (VARCHAR)
+  - user_id (INTEGER)
