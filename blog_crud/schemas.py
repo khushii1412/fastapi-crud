@@ -1,17 +1,14 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, Field
 from typing import List, Optional
 
-
-# -------------------- User Schemas --------------------
+# =================== User Schemas ===================
 
 class UserBase(BaseModel):
-    name: str
-    email: EmailStr
-
+    name: str = Field(..., description="Full name of the user")
+    email: EmailStr = Field(..., description="Valid email address")
 
 class UserCreate(UserBase):
-    password: str
-
+    password: str = Field(..., min_length=6, description="Password with at least 6 characters")
 
 class ShowUser(BaseModel):
     id: int
@@ -20,6 +17,9 @@ class ShowUser(BaseModel):
 
     class Config:
         orm_mode = True
+
+# =================== Blog Schemas ===================
+# (Leave your blog schema as-is below if any)
 
 
 # -------------------- Blog Schemas --------------------
